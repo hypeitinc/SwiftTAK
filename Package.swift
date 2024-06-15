@@ -15,6 +15,8 @@ let package = Package(
             targets: ["SwiftTAK"]),
     ],
     dependencies: [
+        // Original dependency
+        .package(url: "https://github.com/hypeitinc/SwiftTak.git", from: "1.0.0")
         .package(url: "https://github.com/weichsel/ZIPFoundation.git", .upToNextMajor(from: "0.9.0")),
         .package(url: "https://github.com/drmohundro/SWXMLHash.git", .upToNextMajor(from: "7.0.0"))
     ],
