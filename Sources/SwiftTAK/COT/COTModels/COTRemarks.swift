@@ -26,6 +26,7 @@ public struct COTRemarks : COTNode, Equatable {
         attrs["source"] = source
         attrs["timestamp"] = ts
         attrs["to"] = to
+        attrs["vitals"] = message
         return COTXMLHelper.generateXML(nodeName: "remarks", attributes: attrs, message: message)
     }
     

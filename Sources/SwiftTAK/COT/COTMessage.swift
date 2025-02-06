@@ -99,7 +99,8 @@ public class COTMessage: NSObject {
                                callSign: String,
                                group: String,
                                role: String,
-                               phoneBatteryStatus: String = "") -> String {
+                               phoneBatteryStatus: String = "",
+                               remark: COTRemarks) -> String {          //L42TAK  //MARK:  Type as COTRemarks
         let cotTimeout = staleTimeMinutes * 60.0
         let heightAboveElipsoid: String = positionInfo.heightAboveElipsoid.description
         let circularError: String = positionInfo.circularError.description
@@ -116,7 +117,7 @@ public class COTMessage: NSObject {
         var cotDetail = COTDetail()
         
         cotDetail.childNodes.append(COTContact(callsign: callSign))
-        cotDetail.childNodes.append(COTRemarks())
+        cotDetail.childNodes.append(remark)                             //L42TAK
         cotDetail.childNodes.append(COTGroup(name: group, role: role))
         cotDetail.childNodes.append(COTUid(callsign: callSign))
         cotDetail.childNodes.append(COTTrack(speed: speed, course: course))
